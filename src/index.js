@@ -26,7 +26,7 @@ root.innerHTML= '<div class="iconfont iconbianji">字体样式2</div>'
 // consle.log('代码报错')
 
 let btn = document.createElement('button')
-btn.innerHTML = '新增'
+btn.innerHTML = '新增+'
 document.body.appendChild(btn)
 btn.onclick = function() {
   let div = document.createElement('div')
