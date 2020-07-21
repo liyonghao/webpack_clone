@@ -13,8 +13,10 @@ import number from './number'
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom'
 import {add} from './math'
-// import _ from 'lodash';
 import loader from 'sass-loader'
+import _ from 'lodash'
+import './test'
+console.log(test.name)
 add(1, 4)
 createImg()
 // let img = new Image()
@@ -25,14 +27,14 @@ let root = document.getElementById('root')
 root.innerHTML= '<div class="iconfont iconbianji">字体样式2</div>'
 // consle.log('代码报错')
 
-let btn = document.createElement('button')
-btn.innerHTML = '新增-+'
-document.body.appendChild(btn)
-btn.onclick = function() {
-  let div = document.createElement('div')
-  div.innerHTML = 'item'
-  document.body.appendChild(div)
-}
+// let btn = document.createElement('button')
+// btn.innerHTML = '新增-+'
+// document.body.appendChild(btn)
+// btn.onclick = function() {
+//   let div = document.createElement('div')
+//   div.innerHTML = 'item'
+//   document.body.appendChild(div)
+// }
 // export default class App extends Component {
 //   render() {
 //     return <div>Hello world</div>
@@ -53,6 +55,7 @@ if(module.hot) {
     number()
   }
 }
+console.log('lodash----------------')
 const arr = [
   new Promise(() => {}),
   new Promise(() => {})
@@ -60,3 +63,15 @@ const arr = [
 arr.map(item => {
   console.log(item)
 })
+let element = document.createElement('div')
+element.innerHTML = _.join(['Dell', 'Lee'], '-')
+document.body.appendChild(element)
+// async function getComponent () {
+//   const { default: _ } = await import(/*webpackChunkNmae="lodash"*/ 'lodash')
+//   let element = document.createElement('div')
+//   element.innerHTML = _.join(['Dell', 'Lee'], '-')
+//   return element
+// }
+// getComponent().then(element => {
+//   document.body.appendChild(element)
+// })

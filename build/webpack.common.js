@@ -74,4 +74,29 @@ module.exports = {
     new CleanWebpackPlugin(),
     // new webpack.HotModuleReplacementPlugin()
   ],
+    // 当用到类库的时候，自动打包文件
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+        minSize: 30000,
+        minChunks: 1, // 当一个模块用了多少次的时候才开始分割
+        maxAsyncRequests: 5,
+        maxInitialRequests: 3,
+        automaticNameDelimiter: '~',
+        name: true,
+        cacheGroups: {
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10, // -10 代表优先级
+            filename: 'vendor.js'
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true,
+            filename: 'common.js'
+          }
+        }
+      }
+    }
 }
